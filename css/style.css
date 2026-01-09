@@ -9,7 +9,7 @@
 }
 
 img {
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
 }
 
@@ -98,7 +98,7 @@ html {
 body {
     color: var(--FONT-COLOR);
     min-height: 100vh;
-    max-width: 1600px;
+    max-width: clamp(320px, 100%, 1600px);
     margin: 0 auto;
     /* padding: var(--PADDING-TB) var(--PADDING-SIDE); */
     border: 1px solid black;
@@ -127,10 +127,6 @@ a:focus {
     border-bottom: var(--BORDERS);
 }
 
-.header__h1 {
-    color: var(--HEADER-COLOR);
-}
-
 .header__top {
     display: flex;
     justify-content: space-between;
@@ -143,6 +139,7 @@ a:focus {
 }
 
 .header__h1 {
+    color: var(--HEADER-COLOR);
     padding-bottom: 0.2em;
 }
 
@@ -160,9 +157,18 @@ a:focus {
 .main__categories {
     display: flex;
     justify-content: space-between;
-    gap: 0.1rem;
+    gap: 50px;
     padding: 0 var(--PADDING-SIDE);
+    padding-bottom: 10px;
     margin: 0.5em 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.main__categories::-webkit-scrollbar {
+    margin-top: 10px;
 }
 
 .main__buttons {
@@ -265,4 +271,41 @@ a:focus {
     padding: var(--MEDIA_PADDING-TB) var(--MEDIA_PADDING-SIDE);
     margin-left: 10px;
     border-radius: 5px;
+}
+
+/* MEDIA QUERIES */
+
+/* SMALL */
+
+@media screen and (max-width: 576px) {
+
+    /* GENERAL STYLES */
+    body {
+        max-width: 576px;
+        height: auto;
+    }
+
+    /* HEADER */
+    .header__top {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .top__p {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .header__nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    /* .header__h1 {
+        white-space: normal;
+        max-width: 200px;
+    } */
+
+    /* MAIN */
+
 }
