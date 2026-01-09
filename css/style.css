@@ -307,7 +307,8 @@ a:focus {
     } */
 
     /* MAIN */
-    .main__article {
-        display: none;
-    }
+}
+
+.main__article {
+    display: none;
 }
