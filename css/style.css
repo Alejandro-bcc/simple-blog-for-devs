@@ -307,5 +307,7 @@ a:focus {
     } */
 
     /* MAIN */
-
+    .main__article {
+        display: none;
+    }
 }
